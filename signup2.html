@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AVA-Signup Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add an active class to highlight the current page */
+        .topnav a.active {
+            background-color: #e2ac15;
+            color: white;
+        }
+
+        /* Hide the link that should open and close the topnav on small screens */
+        .topnav .icon {
+            display: none;
+        }
+
+        /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            border: 3px solid #f1f1f1;
+            width: 50%;
+            margin-left: 345px;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #eecb04;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: 50%;
+            padding: 10px 18px;
+            background-color: #eecc0b;
+            color: black;
+        }
+
+        .imgcontainer {
+            text-align: left;
+            margin: 0px 0 0px 0;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+
+            padding: 16px;
+            width: 50%;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 50px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Home</a>
+    <a href="login2.html">Login</a>
+    <a href="signup2.html">Sign up</a>
+    <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <form action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <img padding="0px" src="C:\Users\Pooja\Downloads\ava\AVA\flight\img\loginimg.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Name</b></label>
+            <input type="text" id="user" placeholder="Enter Username" name="uname" required>
+            <label for="email"><b>Email</b></label>
+            <input type="text" id="mail1" placeholder="Enter email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="psw1" placeholder="Enter Password" name="psw" required>
+            <label for="conf-psw"><b>Confirm Password</b></label>
+            <input type="password" id="cpsw1" placeholder="Confirm Password" name="conf-psw" required>
+
+            <a href="login2.html"><button type="button" onclick="return validator()">Sign up</button></a>
+            
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+        </div>
+    </form>
+<script type="text/javascript">
+    function validator()
+    {
+        var x=document.getElementById("mail1").value;
+        var psw2=document.getElementById("psw1").value;
+        var cpsw2=document.getElementById("cpsw1").value;
+        var user2=document.getElementById("user").value;
+        var atposition=x.indexOf("@");
+        var dotposition=x.lastIndexOf(".");
+        if(user2==''||user2==null||(cpsw2!=psw2)||psw2.length<8||atposition<1||dotposition<atposition+2||dotposition+2>=x.length)
+         {
+            if(user2==''&&psw2==''&&x=='')
+            alert("Enter information");
+            else if(atposition<1||dotposition<atposition+2||dotposition+2>=x.length)
+            alert("Enter e-mail id properly");
+            else if(user2==''||user2==null)
+            alert("Enter correct information");
+            else if((cpsw2!=psw2))
+            alert("Password mismatch");
+            else if(psw2.length<8)
+            alert("Password must be 8 characters long");
+
+             return false;
+         }
+
+
+
+    }
+</script>
+</body>
+
+</html>
