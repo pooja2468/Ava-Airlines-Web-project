@@ -15,3 +15,7 @@ You can install Visual Studio code using the link below
 ```
 https://code.visualstudio.com/docs?dv=win 
 ```
+## The web-page can be accessed via:
+
+ https://poojasingari.github.io/Ava-Airlines-Web-project/
+ 
