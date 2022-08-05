@@ -19,5 +19,5 @@ https://code.visualstudio.com/docs?dv=win
 ```
 ## The web-page can be accessed via:
 
- https://poojasingari.github.io/Ava-Airlines-Web-project/
+ https://pooja2468.github.io/Ava-Airlines-Web-project/
  
